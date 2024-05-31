@@ -15,6 +15,7 @@
 		F38DA78A2C09A578007440B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F38DA7892C09A578007440B4 /* Assets.xcassets */; };
 		F38DA78D2C09A578007440B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38DA78B2C09A578007440B4 /* LaunchScreen.storyboard */; };
 		F38DA7952C09A6E5007440B4 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38DA7942C09A6E5007440B4 /* CoreDataStack.swift */; };
+		F38DA79B2C09C503007440B4 /* ViewController2-Codegan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38DA79A2C09C503007440B4 /* ViewController2-Codegan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F38DA78C2C09A578007440B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F38DA78E2C09A578007440B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F38DA7942C09A6E5007440B4 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		F38DA79A2C09C503007440B4 /* ViewController2-Codegan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController2-Codegan.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				F38DA78E2C09A578007440B4 /* Info.plist */,
 				F38DA7862C09A577007440B4 /* phw23_2_coredata.xcdatamodeld */,
 				F38DA7942C09A6E5007440B4 /* CoreDataStack.swift */,
+				F38DA79A2C09C503007440B4 /* ViewController2-Codegan.swift */,
 			);
 			path = "phw23-2-coredata";
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				F38DA7952C09A6E5007440B4 /* CoreDataStack.swift in Sources */,
 				F38DA7882C09A577007440B4 /* phw23_2_coredata.xcdatamodeld in Sources */,
 				F38DA7822C09A577007440B4 /* ViewController.swift in Sources */,
+				F38DA79B2C09C503007440B4 /* ViewController2-Codegan.swift in Sources */,
 				F38DA77E2C09A577007440B4 /* AppDelegate.swift in Sources */,
 				F38DA7802C09A577007440B4 /* SceneDelegate.swift in Sources */,
 			);

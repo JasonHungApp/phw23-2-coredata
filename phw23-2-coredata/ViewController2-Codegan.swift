@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ViewController2-Codegan.swift
 //  phw23-2-coredata
 //
 //  Created by jasonhung on 2024/5/31.
@@ -8,48 +8,37 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class ViewController2_Codegan: UIViewController {
     
     @IBOutlet weak var stringLabel: UILabel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        insertSimpleValue("Jason:\(Int.random(in: 0..<100))")
         updateStringLabel()
-    }
-
-    func updateStringLabel() {
-        if let values = fetchSimpleValues() {
-            stringLabel.text = values.joined(separator: "\n")
-        }
     }
     
     func insertSimpleValue(_ value: String) {
         let context = CoreDataStack.shared.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "SimpleEntity", in: context)!
-        let simpleObject = NSManagedObject(entity: entity, insertInto: context)
+        let simpleEntity = SimpleEntity(context: context)
+        simpleEntity.simple_value = value
         
-        simpleObject.setValue(value, forKey: "simple_value")
-        
-        do {
-            try context.save()
-        } catch {
-            print("Failed to save value: \(error)")
-        }
+        CoreDataStack.shared.saveContext()
     }
     
     func fetchSimpleValues() -> [String]? {
         let context = CoreDataStack.shared.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "SimpleEntity")
+        let fetchRequest = SimpleEntity.fetchRequest()
         
         do {
             let results = try context.fetch(fetchRequest)
-            return results.map { $0.value(forKey: "simple_value") as? String }.compactMap { $0 }
+            return results.map { $0.simple_value ?? "" }
         } catch {
             print("Failed to fetch values: \(error)")
             return nil
         }
     }
-
+    
     func deleteAllData() {
         let context = CoreDataStack.shared.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SimpleEntity")
@@ -63,7 +52,12 @@ class ViewController: UIViewController {
         }
     }
     
-
+    func updateStringLabel() {
+        if let values = fetchSimpleValues() {
+            stringLabel.text = values.joined(separator: "\n")
+        }
+    }
+    
     @IBAction func AddString(_ sender: Any) {
         insertSimpleValue("Jason:\(Int.random(in: 0..<100))")
         updateStringLabel()
@@ -74,6 +68,4 @@ class ViewController: UIViewController {
         deleteAllData()
         updateStringLabel()
     }
-    
 }
-
